@@ -243,8 +243,14 @@ variable "multi_az" {
 }
 
 variable "name" {
-  description = "The name prefix to use for the resources created in this module."
+  description = "The name to use for the resources created in this module. This is interpreted different depending on 'name_is_wholename' variable but only for the instance name, all other resources treat the value as a prefix."
   type        = string
+}
+
+variable "name_is_wholename" {
+  description = "If 'false'  the 'name' variable is treated as a prefix, otherwise it is treated as the wholename for the db_instance only - other resources still use it as a prefix. This variable eases the process of importing a db instance into the module's namespace."
+  type        = bool
+  default     = false
 }
 
 variable "notification_topic" {
