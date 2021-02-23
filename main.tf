@@ -354,6 +354,7 @@ module "free_storage_space_alarm_ticket" {
   severity                 = "urgent"
   statistic                = "Average"
   threshold                = var.alarm_free_space_limit
+  unit                     = "Count"
 
   dimensions = [
     {
@@ -379,6 +380,7 @@ module "replica_lag_alarm_ticket" {
   severity                 = "urgent"
   statistic                = "Average"
   threshold                = 3600
+  unit                     = "Count"
 
   dimensions = [
     {
@@ -402,6 +404,7 @@ module "free_storage_space_alarm_email" {
   rackspace_alarms_enabled = false
   statistic                = "Average"
   threshold                = 3072000000
+  unit                     = "Count"
 
   dimensions = [
     {
@@ -425,6 +428,7 @@ module "write_iops_high_alarm_email" {
   rackspace_alarms_enabled = false
   statistic                = "Average"
   threshold                = var.alarm_write_iops_limit
+  unit                     = "Count"
 
   dimensions = [
     {
@@ -448,6 +452,7 @@ module "read_iops_high_alarm_email" {
   rackspace_alarms_enabled = false
   statistic                = "Average"
   threshold                = var.alarm_read_iops_limit
+  unit                     = "Count"
 
   dimensions = [
     {
@@ -471,6 +476,7 @@ module "cpu_high_alarm_email" {
   rackspace_alarms_enabled = false
   statistic                = "Average"
   threshold                = var.alarm_cpu_limit
+  unit                     = "Count"
 
   dimensions = [
     {
@@ -495,6 +501,7 @@ module "replica_lag_alarm_email" {
   rackspace_alarms_enabled = false
   statistic                = "Average"
   threshold                = 3600
+  unit                     = "Count"
 
   dimensions = [
     {
